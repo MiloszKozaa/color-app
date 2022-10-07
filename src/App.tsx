@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import ShowColorHEX from './components/ShowColorHEX';
+import Button from './components/Button';
 import './App.css';
 
 function App() {
@@ -48,8 +49,10 @@ function App() {
   return (
     <div className='App' style={{ backgroundColor: randomColor }}>
       <Header />
-      <ShowColorHEX color={randomColor} />
-      <button onClick={useRandomColor}>Get me!</button>
+      <div>
+        <ShowColorHEX color={randomColor} />
+        <Button onClick={useRandomColor} name={'Random color'} />
+      </div>
       <Footer />
     </div>
   );
