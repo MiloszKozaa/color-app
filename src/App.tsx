@@ -1,11 +1,28 @@
 import { useState, useEffect } from 'react';
-import Footer from './components/Footer'
-import Header from './components/Header'
-import ShowColorHEX from "./components/ShowColorHEX";
+import Footer from './components/Footer';
+import Header from './components/Header';
+import ShowColorHEX from './components/ShowColorHEX';
 import './App.css';
 
 function App() {
-  let color = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+  let color = [
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+  ];
   const [randomColor, randomColorSet] = useState('#fff');
 
   const getRandomNumber = (max: number) => {
@@ -18,22 +35,22 @@ function App() {
       currentColor += color[getRandomNumber(15)];
     }
     return currentColor;
-  }
+  };
 
   const useRandomColor = () => {
     randomColorSet(getRandomColor());
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     randomColorSet(getRandomColor());
-  }, [])
+  }, []);
 
   return (
     <div className='App' style={{ backgroundColor: randomColor }}>
-      <Header/>
+      <Header />
       <ShowColorHEX color={randomColor} />
       <button onClick={useRandomColor}>Get me!</button>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
