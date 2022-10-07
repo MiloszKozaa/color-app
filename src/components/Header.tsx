@@ -6,8 +6,8 @@ const Header = () => {
     <div className='headerWrapper'>
       <div className='headerLogo'>
         <Link
-          link='https://github.com/MiloszKozaa/weather-app'
-          linkTitle='weather'
+          link='https://github.com/MiloszKozaa/color-app'
+          linkTitle='color'
         />
         app
       </div>
