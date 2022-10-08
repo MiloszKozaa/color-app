@@ -17,5 +17,7 @@ export type IconTypes = {
 };
 
 export type SpeechBubbleTypes = {
-  name: string;
+  text: string;
+  icon: string;
+  style: string;
 };

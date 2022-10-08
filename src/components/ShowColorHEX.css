@@ -1,17 +1,13 @@
 .ShowColorHEX_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 3px;
   background-color: #1d1d1d;
   box-shadow: 0 0 50px #1d1d1d;
   padding: 20px 30px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 40px;
-}
-
-.ShowColorHEX_value {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  font-weight: 700;
-  letter-spacing: 3px;
 }
