@@ -15,9 +15,3 @@ export type ButtonTypes = {
 export type IconTypes = {
   iconName: string;
 };
-
-export type SpeechBubbleTypes = {
-  text: string;
-  icon: string;
-  style: string;
-};

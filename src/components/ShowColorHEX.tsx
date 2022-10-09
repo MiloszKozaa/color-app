@@ -3,9 +3,22 @@ import { ColorHEXTypes } from '../App.types';
 import './ShowColorHEX.css';
 
 const ShowColorHEX = ({ color }: ColorHEXTypes) => {
+  const [hoverStatus, hoverStatusSet] = useState(false);
+  const [copyStatus, copyStatusSet] = useState(false);
+  const showCopyIcon = () => {
+    console.log('Enter');
+    hoverStatusSet(true);
+  };
 
-  const copyValue = () => {
-    //Change text "Click to copy" with icon to "Copied to clipboard"
+  const hideCopyIcon = () => {
+    console.log('Leave');
+    hoverStatusSet(false);
+    copyStatusSet(false);
+  };
+
+  const copyValue = async () => {
+    console.log('Click');
+    copyStatusSet(true);
     navigator.clipboard.writeText(color);
   };
 
@@ -13,8 +26,16 @@ const ShowColorHEX = ({ color }: ColorHEXTypes) => {
     <>
       <div
         className='ShowColorHEX_wrapper'
-        onClick={copyValue}>
-        {color}
+        onClick={copyValue}
+        onMouseEnter={showCopyIcon}
+        onMouseLeave={hideCopyIcon}>
+        {!hoverStatus ? (
+          <div>{color}</div>
+        ) : !copyStatus ? (
+          <img src={`${process.env.PUBLIC_URL}/icon/copy.png`} alt='' />
+        ) : (
+          <img src={`${process.env.PUBLIC_URL}/icon/done.png`} alt='' />
+        )}
       </div>
     </>
   );

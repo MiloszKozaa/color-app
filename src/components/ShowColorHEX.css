@@ -6,7 +6,8 @@
   letter-spacing: 3px;
   background-color: #1d1d1d;
   box-shadow: 0 0 50px #1d1d1d;
-  padding: 20px 30px;
+  height: 100px;
+  width: 330px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 40px;
