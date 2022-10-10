@@ -6,6 +6,10 @@ import Button from './components/Button';
 import './App.css';
 
 function App() {
+  //random color - done
+  //random gradient - to do
+  //random reindbow - to do
+
   let color = [
     '0',
     '1',
@@ -38,6 +42,12 @@ function App() {
     return currentColor;
   };
 
+  const getReindbow = () => {
+    setTimeout(() => {
+      randomColorSet(getRandomColor());
+    }, 100);
+  };
+
   const useRandomColor = () => {
     randomColorSet(getRandomColor());
   };
@@ -47,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className='App' style={{ backgroundColor: randomColor }}>
+    <div className='App' style={{ background: randomColor }}>
       <Header />
       <div>
         <ShowColorHEX color={randomColor} />
